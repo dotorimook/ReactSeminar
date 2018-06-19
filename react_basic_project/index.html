@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello React App!</title>
+        <script src="https://fb.me/react-15.0.0.js"></script>
+        <script src="https://fb.me/react-dom-15.0.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </body>
+    <script type="text/babel">
+        const div1 = document.querySelector("#div1");
+        ReactDOM.render(<h1>Hello React!</h1>, div1);
+
+        var HelloReact = React.createClass({
+            render: function() {
+                return (
+                <h1>Hello, React, Again!</h1>
+                );
+            }
+        });
+        const div2 = document.querySelector("#div2");
+        ReactDOM.render(<HelloReact/>, div2);
+    </script>
+</html>
