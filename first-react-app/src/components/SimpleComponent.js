@@ -8,5 +8,26 @@ const style = {
 
 export default class SimpleComponent extends Component {
     //arrow function으로도 가능하다.
-    render = () => <div style={style}>it's simple!</div>;
+
+    onClick = (name) => {
+        const {onUpdate} = this.props;
+        onUpdate(name);
+    }
+
+    render = () => {
+        const {name, data} = this.props;
+
+        return (
+            <div style={style}>
+                {name} and {data.name} is simple!
+                <div>
+                    <button
+                        onClick={()=>this.onClick(data.name)}
+                    >
+                    update
+                    </button>
+                </div>
+            </div>
+        );
+    };
 }
